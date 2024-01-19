@@ -18,7 +18,6 @@ html, body {
     scroll-behavior: smooth;
 }
 
-#logo, #hero-text {
+.logo, #hero-text {
     font-family: "Germania One";
 }
-

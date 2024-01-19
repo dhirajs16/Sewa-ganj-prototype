@@ -3,23 +3,6 @@ const home = document.querySelector("#home");
 const bg1 = document.querySelector("#bg-compo-1");
 const bg2 = document.querySelector("#bg-compo-2");
 
-
-
-
-
-const tl = gsap.timeline();
-tl.to(bg1,{scale:1, duration:0.1, opacity: 1});
-tl.to(bg2,{scale:1, duration:0.1, opacity: 1});
-tl.from("#navbar", {y:-100, duration:1});
-tl.from("#hero-text", {duration:0.5, opacity: 0});
-tl.from("#hero-img", {duration: 0.7, opacity: 0});
-
-
-
-
-
-
-
 home.addEventListener("mouseenter", () => {
     gsap.to(bg1, {
         scale: 1,
@@ -44,8 +27,8 @@ home.addEventListener("mouseleave", () => {
 
 
 home.addEventListener("mouseover", (coordinates) => {
-    console.log("x", coordinates.x);
-    console.log("y", coordinates.y);
+    // console.log("x", coordinates.x);
+    // console.log("y", coordinates.y);
     gsap.to(bg2, {
         scale: 1,
         opacity: 1,
@@ -61,6 +44,17 @@ home.addEventListener("mouseover", (coordinates) => {
         ease: "power3.out"
     })
 })
+
+
+
+
+
+const tl = gsap.timeline();
+tl.to(bg1,{scale:1, duration:0.1, opacity: 1});
+tl.to(bg2,{scale:1, duration:0.1, opacity: 1});
+tl.from("#navbar", {y:-100, duration:1});
+tl.from("#hero-text", {duration:0.5, opacity: 0});
+tl.from("#hero-img", {duration: 0.7, opacity: 0});
 
 
 
@@ -92,3 +86,8 @@ gsap.to("#navbar", {
         scrub: 2
     }
 })
+
+const year = new Date().getFullYear();
+console.log(year);
+
+document.querySelector("#year").innerText = year;
